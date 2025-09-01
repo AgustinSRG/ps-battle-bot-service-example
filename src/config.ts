@@ -29,7 +29,7 @@ export function loadConfiguration(): Config {
             bindAddress: process.env.HTTP_BIND_ADDRESS || "",
         },
         https: {
-            enabled: getBoolEnvVar("HTTP_ENABLED", false),
+            enabled: getBoolEnvVar("HTTPS_ENABLED", false),
             port: parseInt(process.env.HTTPS_PORT || "8443", 10) || 8443,
             bindAddress: process.env.HTTPS_BIND_ADDRESS || "",
             certificatePath: process.env.HTTPS_CERTIFICATE_PATH || "",
