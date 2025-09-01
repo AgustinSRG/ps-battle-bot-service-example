@@ -1,0 +1,48 @@
+{
+  "name": "ps-battle-bot-service-example",
+  "version": "0.1.0",
+  "description": "A very simple battle bot service for Showdown-ChatBot.",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "private": true,
+  "homepage": "https://github.com/AgustinSRG/ps-battle-bot-service-example",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgustinSRG/ps-battle-bot-service-example"
+  },
+  "scripts": {
+    "prebuild": "npm run lint",
+    "compile": "tsc --pretty --declaration",
+    "build": "rimraf dist && npm run compile",
+    "lint": "eslint --fix src/**/*.ts",
+    "start": "node dist/index.js"
+  },
+  "files": [
+    "dist/"
+  ],
+  "author": {
+    "name": "Agustin San Roman",
+    "email": "agustinsanromanguzman@gmail.com",
+    "url": "https://github.com/AgustinSRG"
+  },
+  "engines": {
+    "node": ">= 18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.8.2",
+    "@typescript-eslint/eslint-plugin": "6.7.4",
+    "@typescript-eslint/parser": "6.7.4",
+    "dotenv": "16.3.1",
+    "eslint": "8.50.0",
+    "rimraf": "5.0.5",
+    "ts-node": "10.9.1",
+    "typedoc": "0.25.1",
+    "typescript": "5.2.2"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@asanrom/async-tools": "2.1.0",
+    "@asanrom/javascript-object-sanitizer": "1.0.0",
+    "@asanrom/ps-battle-bot-lib": "0.5.1"
+  }
+}
