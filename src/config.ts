@@ -25,7 +25,7 @@ export function loadConfiguration(): Config {
     return {
         http: {
             enabled: getBoolEnvVar("HTTP_ENABLED", true),
-            port: parseInt(process.env.HTTP_PORT || "8080", 10) || 8080,
+            port: parseInt(process.env.HTTP_PORT || "8081", 10) || 8081,
             bindAddress: process.env.HTTP_BIND_ADDRESS || "",
         },
         https: {
