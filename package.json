@@ -15,7 +15,8 @@
     "compile": "tsc --pretty --declaration",
     "build": "rimraf dist && npm run compile",
     "lint": "eslint --fix src/**/*.ts",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "test": "eslint src/**/*.ts"
   },
   "files": [
     "dist/"
