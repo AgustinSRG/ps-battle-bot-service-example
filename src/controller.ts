@@ -77,6 +77,8 @@ export class ApiController {
             });
 
             request.on("end", () => {
+                Logger.getInstance().debug("Request body: " + body);
+
                 if (!body) {
                     return resolve(null);
                 }
@@ -154,9 +156,13 @@ export class ApiController {
             }
         }
 
+        const responseText = JSON.stringify(battleBotResponse);
+
+        Logger.getInstance().debug("Response body: " + responseText);
+
         response.writeHead(200, {
             "Content-Type": "application/json; charset=utf-8",
         });
-        response.end(JSON.stringify(battleBotResponse));
+        response.end(responseText);
     }
 }
