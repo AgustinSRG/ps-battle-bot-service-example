@@ -1,0 +1,18 @@
+# Docker compose file
+
+services:
+  battle_bot_service:
+    image: asanrom/ps-battle-bot-service-example
+    build:
+      context: .
+    ports:
+      - '${HTTP_BIND_ADDRESS:-127.0.0.1}:${HTTP_PORT:-8081}:${HTTP_PORT:-8081}'
+    environment:
+      - HTTP_ENABLED=${HTTP_ENABLED:-YES}
+      - HTTP_PORT=${HTTP_PORT:-8081}
+      - API_AUTH_TOKEN=${API_AUTH_TOKEN:-secret}
+      - LOG_ERROR=${LOG_ERROR:-YES}
+      - LOG_WARNING=${LOG_WARNING:-YES}
+      - LOG_INFO=${LOG_INFO:-YES}
+      - LOG_DEBUG=${LOG_DEBUG:-NO}
+      - LOG_TRACE=${LOG_TRACE:-NO}
