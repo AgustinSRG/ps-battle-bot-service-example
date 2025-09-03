@@ -4,6 +4,8 @@ This repository contains an example battle bot service for [Showdown-ChatBot](ht
 
 This can also serve as a reference to implement other battle bot services.
 
+If you want to modify the battle algorithm used by the service, edit [src/battle-bot.ts](./src/battle-bot.ts). Check the [library documentation](https://github.com/AgustinSRG/ps-battle-bot-lib/blob/master/DOCUMENTATION.md) on how to create custom battle algorithms.
+
 ## Configuration
 
 You can configure the project using environment variables.
