@@ -135,7 +135,7 @@ export class ApiController {
             }
 
             const updateResponse: BattleUpdateResponse = {
-                id,
+                id: battleUpdateObject.id,
             };
 
             if (battleUpdateObject.decide) {
