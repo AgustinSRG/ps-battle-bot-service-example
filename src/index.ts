@@ -19,6 +19,14 @@ function main() {
 
     const battleBot = makeBattleBot();
 
+    battleBot.on("error", err => {
+        Logger.getInstance().error(err);
+    });
+
+    battleBot.on("debug", (battle, msg) => {
+        Logger.getInstance().debug(`[Battle Bot] [Battle: ${battle}] ${msg}`);
+    });
+
     const controller = new ApiController(config, battleBot);
 
     if (config.http.enabled) {
