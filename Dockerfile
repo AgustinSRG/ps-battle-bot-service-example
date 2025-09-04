@@ -11,6 +11,9 @@ FROM node:20-alpine AS BUILDER
     # Install dependencies
     RUN npm install
 
+    # Copy source files
+    COPY . .
+
     # Build
     RUN npm run build
 
