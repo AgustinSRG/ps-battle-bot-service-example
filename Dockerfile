@@ -3,7 +3,8 @@
 FROM node:20-alpine AS BUILDER
 
     # In order to build the project, we will do in the /root folder
-    WORKDIR /root
+    RUN mkdir /builder
+    WORKDIR /builder
 
     # Copy dependency list files
     COPY package*.json .
@@ -30,7 +31,7 @@ FROM node:20-alpine AS RUNNER
     RUN npm install --production
 
     # Copy files from BUILDER
-    COPY --from=BUILDER /root/dist /server/dist
+    COPY --from=BUILDER /builder/dist /server/dist
 
     # Environment
     ENV NODE_ENV=production
